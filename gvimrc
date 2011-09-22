@@ -1,4 +1,6 @@
 if has('gui_macvim')
+  set guioptions-=T          	" remove the toolbar
+
   macmenu &File.New\ Tab key=<D-T>
   map <D-d> :CommandT<CR>
   imap <D-d> <Esc>:CommandT<CR>
