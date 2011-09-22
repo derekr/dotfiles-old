@@ -20,6 +20,9 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'molokai'
 Bundle 'https://github.com/nono/github_vim_theme.git'
 Bundle 'https://github.com/altercation/vim-colors-solarized.git'
+Bundle 'https://github.com/fholgado/minibufexpl.vim.git'
+Bundle 'https://github.com/scrooloose/nerdcommenter.git'
+Bundle 'https://github.com/scrooloose/nerdtree.git'
              " ...
 
 filetype plugin indent on     " required!
@@ -74,6 +77,38 @@ set listchars=tab:▸\ ,eol:¬
 
 nnoremap j gj
 nnoremap k gk
+
+" use left and right in normal mode to change buffers
+noremap <Left> :bp<cr>
+noremap <Right> :bn<cr>
+
+" GUI Settings {
+	" GVIM- (here instead of .gvimrc)
+	if has('gui_running')
+		set guioptions-=T          	" remove the toolbar
+		set guifont=AndaleMono:h14
+    "Remove all bells - this needs to be moved to .gvimrc
+    set vb t_vb=
+
+		"set transparency=5          " Make the window slightly transparent
+
+    "minibuf options
+    let g:miniBufExplMapWindowNavVim = 1
+    let g:miniBufExplMapWindowNavArrows = 1
+    let g:miniBufExplMapCTabSwitchBufs = 1
+    let g:miniBufExplModSelTarget = 1
+    let g:miniBufExplorerMoreThanOne = 0
+    let g:miniBufExplUseSingleClick = 1
+    let g:miniBufExplMapWindowNavVim = 1
+	else
+		set term=builtin_ansi       " Make arrow and other keys work
+	endif
+" }
+
+" cut/paste to/from clipboard
+map <C-V> "+gP
+cmap <C-V> <C-R>+
+vnoremap <C-C> "+y
 
 nnoremap ; :
 
