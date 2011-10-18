@@ -10,9 +10,10 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'molokai'
 Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'emilkje/sparkup-bundle'
 Bundle 'minibufexpl.vim'
 Bundle 'jshint.vim'
+Bundle 'tComment'
+Bundle 'unimpaired.vim'
 
 filetype plugin indent on
 
@@ -82,6 +83,16 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+" Control Indentation
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
+" Buffer Navigation
+noremap <Left> :bp<cr>
+noremap <Right> :bn<cr>
+
 " Splits Navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -117,6 +128,9 @@ nnoremap <leader>v V`]
 
 " ,ev - Quickly open ~/.vimrc in vertical split for quick editing.
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" ,c - Comment a selection or line.
+map <leader>c <c-_><c-_>
 
 " Plugin Settings
 " Command-T
