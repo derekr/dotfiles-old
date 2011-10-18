@@ -64,11 +64,11 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
 
 " Invisibles
 set list
 set listchars=tab:▸\ ,eol:¬
+nmap <leader>l :set list!<CR>
 
 " General Movement
 set mouse=a
@@ -134,4 +134,4 @@ map <leader>c <c-_><c-_>
 
 " Plugin Settings
 " Command-T
-let g:CommandTMaxHeight = 10
+let g:CommandTMaxHeight = 20
