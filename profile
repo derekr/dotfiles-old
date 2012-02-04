@@ -10,7 +10,4 @@ alias ll='ls -laG'
 alias ls='ls -G'
 
 # Trulia
-alias fedev='ssh dreynolds@fedev.utah.trulia.com'
-alias synccobrand='rsync -avz ~/Documents/Trulia/public_html/cobrand_merge/ dreynolds@fedev.utah.trulia.com:/home/dreynolds/public_html/cobrand_merge/ --exclude ".svn"'
-alias syncfilters='rsync -avz ~/Documents/Trulia/public_html/filter_cleanup/ dreynolds@fedev.utah.trulia.com:/home/dreynolds/public_html/filters/ --exclude ".svn"'
-alias synccommon='rsync -avz ~/Documents/Trulia/svn/common/ dreynolds@fedev.utah.trulia.com:/home/dreynolds/svn/common/ --exclude ".svn"'
+source ~/.trulia

@@ -14,6 +14,7 @@ Bundle 'minibufexpl.vim'
 Bundle 'jshint.vim'
 Bundle 'tComment'
 Bundle 'unimpaired.vim'
+Bundle 'https://github.com/kien/ctrlp.vim.git'
 
 filetype plugin indent on
 
