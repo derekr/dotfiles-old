@@ -9,12 +9,15 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'molokai'
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'minibufexpl.vim'
 Bundle 'jshint.vim'
 Bundle 'tComment'
 Bundle 'unimpaired.vim'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
 
@@ -27,6 +30,7 @@ nnoremap ; :
 syntax on
 colorscheme molokai
 set nu " line numbers
+set transparency=2
 
 " Tabs, Spaces and Indentation
 set tabstop=2
@@ -111,6 +115,15 @@ vnoremap <F1> <ESC>
 " Autosave On Blur
 au FocusLost * :wa
 
+" GUI
+if has('gui_running')
+  set guioptions-=T " remove the toolbar
+  set guioptions-=l " remove the toolbar
+  set guioptions-=L " remove the toolbar
+  set guioptions-=r " remove the toolbar
+  set guioptions-=R " remove the toolbar
+endif
+
 " Custom Commands
 " ,W - Strip all whitespace for file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -136,3 +149,12 @@ map <leader>c <c-_><c-_>
 " Plugin Settings
 " Command-T
 let g:CommandTMaxHeight = 20
+
+" power-line
+if has('gui_running')
+  let g:Powerline_symbols = "fancy"
+  set guifont=Menlo_for_Powerline:h14
+endif
+
+" ctrlp
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
