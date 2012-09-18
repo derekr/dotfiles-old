@@ -11,7 +11,7 @@ load_correction
 compdef -d svn
 
 #update paths
-export PATH="/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:$PATH"
+export PATH="/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/php5/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 export CLICOLOR=1
 
@@ -38,6 +38,7 @@ alias vim='mvim -v'
 alias vi='vim'
 alias ll='ls -laG'
 alias ls='ls -G'
+alias ldir='for i in *; if [ -d $i ]; then echo $i; fi;'
 alias http-serve='python -m SimpleHTTPServer 40001'
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -95,6 +96,9 @@ function pyenv {
   fi
   source ~/.env/$1/bin/activate
 }
+
+# svn helpers
+alias svncf="svn status | grep -P '^(?=.{0,6}C)'"
 
 # extract archives -- usage: extract </path/to/archive/>
 extract () {
