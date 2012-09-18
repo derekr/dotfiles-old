@@ -39,6 +39,22 @@ alias vi='vim'
 alias ll='ls -laG'
 alias ls='ls -G'
 alias http-serve='python -m SimpleHTTPServer 40001'
+alias c='pygmentize -O style=monokai -f console256 -g'
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+type -t md5sum > /dev/null || alias md5sum="md5"
+
+alias g="git"
+
+alias fs="stat -f \"%z bytes\""
+
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Source trulia
 source ~/.trulia
