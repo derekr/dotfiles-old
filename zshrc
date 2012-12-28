@@ -45,10 +45,12 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
+alias s='svn'
+
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
-type -t md5sum > /dev/null || alias md5sum="md5"
+#type -t md5sum > /dev/null || alias md5sum="md5"
 
 alias g="git"
 
@@ -97,8 +99,13 @@ function pyenv {
   source ~/.env/$1/bin/activate
 }
 
-# svn helpers
-alias svncf="svn status | grep -P '^(?=.{0,6}C)'"
+#virtualenv wrapper
+export WORKON_HOME=~/.envs
+source /usr/local/share/python/virtualenvwrapper.sh
+
+function mkc () {
+  mkdir -p "$@" && cd "$@"
+}
 
 # extract archives -- usage: extract </path/to/archive/>
 extract () {
@@ -121,3 +128,6 @@ extract () {
     echo "'$1' is not a valid file"
   fi
 }
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
