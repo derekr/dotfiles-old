@@ -16,6 +16,8 @@
   master = checkout master
   f = "!git ls-files | grep -i"
   comp = !sh -c 'git log $1..$2 --pretty=oneline' -
+  ig = "!git update-index --assume-unchanged $1"
+  uig = "!git update-index --no-assume-unchanged $1"
 [color]
   branch = auto
   diff = auto
