@@ -1,7 +1,7 @@
 [user]
   name = Derek
-  email = dreynolds@trulia.com
-  user = dreynolds-trulia
+  email = derekr@me.com
+  user = derekr
 [alias]
   al = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ = \\2/' | sort"
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -33,6 +33,7 @@
 	prompt = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [mergetool]
 	prompt = false
 [merge]

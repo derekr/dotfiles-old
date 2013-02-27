@@ -11,7 +11,7 @@ load_correction
 compdef -d svn
 
 #update paths
-export PATH="/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/php5/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/php5/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 export CLICOLOR=1
 
