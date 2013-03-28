@@ -7,6 +7,9 @@ load_lol_aliases
 load_completion $HOME/.zshuery/completion
 load_correction
 
+# diy subcommands
+eval "$(/usr/local/diy/bin/diy init -)"
+
 # disable svn completion
 compdef -d svn
 
@@ -60,7 +63,10 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Source trulia
-source ~/.trulia
+if [ -f ~/.diy ]
+then
+  source ~/.diy
+fi
 
 #git stuff simplified from oh-my-zsh
 function git_prompt_info() {
