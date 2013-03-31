@@ -62,7 +62,7 @@ alias fs="stat -f \"%z bytes\""
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-# Source trulia
+# Source diy
 if [ -f ~/.diy ]
 then
   source ~/.diy
@@ -106,8 +106,8 @@ function pyenv {
 }
 
 #virtualenv wrapper
-export WORKON_HOME=~/.envs
-source /usr/local/share/python/virtualenvwrapper.sh
+#export WORKON_HOME=~/.envs
+#source /usr/local/share/python/virtualenvwrapper.sh
 
 function mkc () {
   mkdir -p "$@" && cd "$@"
