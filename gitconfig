@@ -19,6 +19,8 @@
   comp = !sh -c 'git log $1..$2 --pretty=oneline' -
   ig = "!git update-index --assume-unchanged $1"
   uig = "!git update-index --no-assume-unchanged $1"
+  ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+  theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 [color]
   branch = auto
   diff = auto
