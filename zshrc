@@ -7,6 +7,8 @@ load_lol_aliases
 load_completion $HOME/.zshuery/completion
 load_correction
 
+source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # diy subcommands
 eval "$(/usr/local/diy/bin/diy init -)"
 
@@ -14,9 +16,12 @@ eval "$(/usr/local/diy/bin/diy init -)"
 compdef -d svn
 
 #update paths
-export PATH="/usr/local/share/npm/bin:/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/php5/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/php5/bin:/usr/local/packer:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 export CLICOLOR=1
+
+#nvm
+[[ -s /Users/drk/.nvm/nvm.sh ]] && . /Users/drk/.nvm/nvm.sh  # This loads NVM
 
 #rbenv
 eval "$(rbenv init - zsh)"
@@ -61,6 +66,8 @@ alias fs="stat -f \"%z bytes\""
 
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+alias isim="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 
 # Source diy
 if [ -f ~/.diy ]
