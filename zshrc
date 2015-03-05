@@ -11,6 +11,7 @@ source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # diy subcommands
 eval "$(/usr/local/diy/bin/diy init -)"
+export CHEF_USER=derekr
 
 # disable svn completion
 compdef -d svn
