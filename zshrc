@@ -3,29 +3,23 @@
 source $HOME/.zshuery/zshuery.sh
 load_defaults
 load_aliases
-load_lol_aliases
-load_completion $HOME/.zshuery/completion
+load_completion $HOME/.zshuery/completion/src
 load_correction
 
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# diy subcommands
-eval "$(/usr/local/diy/bin/diy init -)"
 export CHEF_USER=derekr
 
 # disable svn completion
 compdef -d svn
 
 #update paths
-export PATH="/usr/local/share/npm/bin:/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/php5/bin:/usr/local/packer:$PATH"
+export PATH="/usr/local/share/npm/bin:/usr/local/share/python:$HOME/.rbenv/bin:/usr/local/php5/bin:/usr/local/packer:$HOME/.node_modules/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 export CLICOLOR=1
 
 #nvm
 [[ -s /Users/drk/.nvm/nvm.sh ]] && . /Users/drk/.nvm/nvm.sh  # This loads NVM
-
-#rbenv
-eval "$(rbenv init - zsh)"
 
 #update editor
 export EDITOR='vim'
@@ -61,7 +55,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 
 #type -t md5sum > /dev/null || alias md5sum="md5"
 
-alias g="git"
+alias g="/usr/local/git/bin/git"
 
 alias fs="stat -f \"%z bytes\""
 
@@ -69,12 +63,6 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 alias isim="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
-
-# Source diy
-if [ -f ~/.diy ]
-then
-  source ~/.diy
-fi
 
 #git stuff simplified from oh-my-zsh
 function git_prompt_info() {
